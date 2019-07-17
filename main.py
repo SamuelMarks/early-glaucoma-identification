@@ -15,29 +15,26 @@ Main file to train CNN and NN models on two data sets
 
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
+import os
 
 from train_module import train_cnn, train_nn
 
 # Train and evaluate the CNN model on BD data set
-dataset  = 'BD'
-dirname  = 'results/CNN/{}'.format(dataset) # this can be changed as you wish
+dataset = 'BD'
+dirname = os.path.join('results', 'CNN', dataset)  # this can be changed as you wish
 train_cnn(dataset, dirname)
 
 # Train and evaluate the CNN model on RT data set
-dataset  = 'RT'
-dirname  = 'results/CNN/{}'.format(dataset) # This can be changed as you wish
+dataset = 'RT'
+dirname = os.path.join('results', 'CNN', dataset)  # This can be changed as you wish
 train_cnn(dataset, dirname)
 
 # Train and evaluate the NN model on BD data set
-dataset  = 'BD'
-dirname  = 'results/NN/{}'.format(dataset) # this can be changed as you wish
+dataset = 'BD'
+dirname = os.path.join('results', 'NN', dataset)  # this can be changed as you wish
 train_nn(dataset, dirname)
 
 # Train and evaluate the NN model on RT data set
-dataset  = 'RT'
-dirname  = 'results/NN/{}'.format(dataset) # This can be changed as you wish
+dataset = 'RT'
+dirname = os.path.join('results', 'NN', dataset)  # This can be changed as you wish
 train_nn(dataset, dirname)
-
-
-
