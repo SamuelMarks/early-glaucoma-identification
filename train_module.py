@@ -230,14 +230,14 @@ def train_cnn(dataset, dirname):
             f.write(result_sum_std)
 
         # Save the results into npz file
-        np.savez(os.path.join(dirname, 'ap_scores_config_no_{:d}.npz'.format(model_no)), precs=precs)
+        np.savez(os.path.join(dirname, 'ap_scores_config_no_{:d}.npz'.format(i)), precs=precs)
 
         # Plot results
         fig_x_labels = ['MD', 'SLV', 'MD+SLV', 'CNN']
         plt.figure()
         plt.boxplot(precs.reshape(num_runs * num_folds, 4), labels=fig_x_labels)
         plt.grid()
-        plt.savefig(os.path.join(dirname, 'ap_performance_config_no_{:d}'.format(model_no)))
+        plt.savefig(os.path.join(dirname, 'ap_performance_config_no_{:d}'.format(i)))
         # plt.show()
         plt.close()
 
